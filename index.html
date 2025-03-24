@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets\img\favicon.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!--=============== LIGHTBOX ===============-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+        <title>Dos Cumbres</title>
+    </head>
+    <body class="dark-theme">
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    Dos Cumbres <i class='bx bx-chevrons-up'></i>
+                </a>
+
+                <div class="nav__menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                <i class='bx bx-chevrons-up'></i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#popular" class="nav__link">
+                                <i class='bx bx-building-house' ></i>
+                                <span>Propiedades</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#value" class="nav__link">
+                                <i class='bx bxs-award' ></i>
+                                <span>Nosotros</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">
+                                <i class='bx bx-phone' ></i>
+                                <span>Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="tel:02234119519"  class="button nav__button">
+                    Llámanos
+                </a>
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Descubre <br> Tu propiedad <br> Perfecta
+                        </h1>
+                        <p class="home__description">
+                            "Nuestra misión es ayudarte a
+                            encontrar la vivienda de tus sueños,
+                            un hogar donde puedas construir
+                            tu futuro con tranquilidad y confianza."
+                        </p>
+
+                        <div class="home__value">
+                            <div>
+                                <h1 class="home__value-number">
+                                    15 <span>+</span>
+                                </h1>
+                                <span class="home__value-description">
+                                    Propiedades <br> Premium
+                                </span>
+                            </div>
+                            <div>
+                                <h1 class="home__value-number">
+                                    30 <span>+</span>
+                                </h1>
+                                <span class="home__value-description">
+                                    Clientes <br> Felices
+                                </span>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div class="home__images">
+                        <div class="home__orbe"></div>
+
+                        <div class="home__img">
+                            <img src="assets/img/home.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== LOGOS ====================-->
+            <section class="logos section">
+                <div class="logos__container container grid">
+                    <div class="logos__img">
+                        <img src="assets/img/logo2.png" alt="">
+                    </div>
+                    <div class="logos__img">
+                        <img src="assets/img/logo3.png" alt="">
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== PROPIEDADES ====================-->
+            <section class="popular section" id="popular">
+                <div class="container">
+                    <span class="section__subtitle">Mejores opciones</span>
+                    <h2 class="section__title">
+                        Nuestras propiedades<span>.</span>
+                    </h2>
+
+                    <div class="value__data">
+                        <p class="value__description">
+                            (Ten en cuenta que hay propiedades con las que contamos que no están publicadas,
+                            contáctenos!)
+                        </p>
+                    </div>
+
+                    <div class="popular__container swiper" onclick="abrirDetallePropiedad(event)">
+                        <div class="swiper-wrapper">
+                            <article class="popular__card swiper-slide">
+                                <img src="assets\img\elceibo1.jpeg" alt="" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>380.000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        Casa barrio El Ceibo
+                                    </h3>
+                                    <p class="popular__description">
+                                        Rastreador Calivar Nte. 817, J5400 Rivadavia, San Juan.
+                                    </p>
+                                    <a href="property.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/complejo1.jpg" alt="" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>500.000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        Complejo de departamentos
+                                    </h3>
+                                    <p class="popular__description">
+                                        Pedro de Valdivia 1453 oeste 
+                                        entre urquiza y conector sur, J5400, San Juan.
+
+                                    </p>
+                                    <a href="property2.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/monoambiente13.jpeg" alt="" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>50.000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        Monoambiente capital
+                                    </h3>
+                                    <p class="popular__description">
+                                        San Isidro y Matías Zavalla, J5400, San Juan.
+                                    </p>
+                                    <a href="property5.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/casacentro22.jpeg" alt="" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>180.000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        Casa zona centro
+                                    </h3>
+                                    <p class="popular__description">
+                                        Zona centro, J5400, San Juan.
+                                    </p>
+                                    <a href="property4.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/depto_capital7.jpeg" alt="" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>100,000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        Departamento moderno capital
+                                    </h3>
+                                    <p class="popular__description">
+                                        9 de julio y Caseros, J5400, San Juan.
+                                    </p>
+                                    <a href="property3.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/reciclableppal.jpeg" alt="" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>90,000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        Casa reciclable
+                                    </h3>
+                                    <p class="popular__description">
+                                        A cuadras de Matias Zavalla y Av. Libertador, J5400, San Juan.
+                                    </p>
+                                    <a href="property6.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/residencialppal.jpeg" alt="" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>430.000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        Casa Barrio Residencial
+                                    </h3>
+                                    <p class="popular__description">
+                                        Barrio Residencial, a cuadras de plaza Italia, J5400, San Juan.
+                                    </p>
+                                    <a href="property7.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>    
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/terrenoppal.jpeg" alt="" class="popular__img">
+    
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>30.000
+                                    </h2>
+                                    <h3 class="popular__title">
+                                            Terreno
+                                    </h3>
+                                    <p class="popular__description">
+                                            A cuadras de Matias Zavalla y Av. Libertador, J5400, San Juan.
+                                    </p>
+                                    <a href="property8.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                <img src="assets/img/mauxppal.jpeg" alt="" class="popular__img">
+    
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>•</span>Alquiler
+                                    </h2>
+                                    <h3 class="popular__title">
+                                            Departamento Maria Auxiliadora
+                                    </h3>
+                                    <p class="popular__description">
+                                            Complejo Maria Auxiliadora, J5400, San Juan.
+                                    </p>
+                                    <a href="property9.html" class="button">Ver Detalle</a>
+                                </div>
+                            </article>
+
+                        </div>
+
+                        <div class="swiper-button-next">
+                            <i class='bx bx-chevron-right' ></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class='bx bx-chevron-left' ></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== VALORES ====================-->
+            <section class="value section" id="value">
+                <div class="value__container container grid">
+                    <div class="value__images">
+                        <div class="value__orbe"></div>
+
+                        <div class="value__img">
+                            <img src="assets/img/value.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="value__content">
+                        <div class="value__data">
+                            <span class="section__subtitle">Nuestros valores</span>
+                            <h2 class="section__title">
+                                La atención que brindamos<span>.</span>
+                            </h2>
+                            <p class="value__description">
+                                Siempre estamos listos para ayudar brindando el mejor servicio.
+                                Creemos que un buen lugar para vivir puede mejorar su vida significativamente.
+                            </p>
+                        </div>
+
+                        <div class="value__accordion">
+                            <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                    <i class='bx bxs-check-square value__accordion-icon' ></i>
+                                    <h3 class="value__accordion-title">
+                                        Creditos hipotecarios
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                        <i class='bx bxs-down-arrow' ></i>
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+                                        Te ayudamos a encontrar el mejor crédito hipotecario con los principales bancos.
+                                        Recibe asesoramiento personalizado para financiar 
+                                        la compra de tu propiedad con las mejores condiciones del mercado.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                    <i class='bx bxs-briefcase-alt-2 value__accordion-icon' ></i>
+                                    <h3 class="value__accordion-title">
+                                        Profesionales que nos respaldan
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                        <i class='bx bxs-down-arrow' ></i>
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+                                        Contamos con un estudio jurídico/contable 
+                                        con un servicio de alto nivel
+                                        para solucinar todas las inquietudes y necesidades
+                                        que puedan surgir
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                    <i class='bx bxs-bar-chart-square value__accordion-icon' ></i>
+                                    <h3 class="value__accordion-title">
+                                        Te acompañamos en el proceso 
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                        <i class='bx bxs-down-arrow' ></i>
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+                                        Nuestros consultores especializados te acompañarán 
+                                        en cada etapa del proceso, 
+                                        comprendiendo tus necesidades y preferencias 
+                                        para ofrecerte las mejores opciones. 
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                    <i class='bx bxs-check-square value__accordion-icon' ></i>
+                                    <h3 class="value__accordion-title">
+                                        Sin compromisos!
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                        <i class='bx bxs-down-arrow' ></i>
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+                                        Entendemos que elegir tu futura vivienda es una decisión importante y que cada persona necesita su propio tiempo para encontrar el lugar ideal. Por eso, estamos aquí para brindarte toda la información que necesites, responder tus dudas y asesorarte en cada paso del proceso, sin ninguna presión ni compromiso. Queremos que tomes la mejor decisión con total tranquilidad.
+¡No dudes en contactarnos! Estamos a tu disposición para ayudarte en lo que necesites.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== CONTACTO ====================-->
+            <section class="contact section" id="contact">
+                <div class="contact__container container grid">
+                    <div class="contact__images">
+                        <div class="contact__orbe"></div>
+
+                        <div class="contact__img">
+                            <img src="assets/img/contact.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="contact__content">
+                        <div class="contact__data">
+                            <span class="section__subtitle">Contactenos</span>
+                            <h2 class="section__title">
+                                Facilidades para el contacto<span>.</span>
+                            </h2>
+                            <p class="contact__description">
+                                ¿Tiene dificultades para encontrar la casa de sus sueños? 
+                                ¿Necesita una guía para comprar su primera vivienda? 
+                                Solo contáctenos. Estaremos encantados de ayudarlo.
+                            </p>
+                        </div>
+
+                        <div class="contact__card">
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-phone-call'></i>
+
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Llamada
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            264.484.9180
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="tel:2644849180" class="button contact__card-button">
+                                    Llame ahora
+                                </a>
+
+                            </div>
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-message-dots' ></i>
+
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            WhatsApp
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            264.484.9180
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="https://wa.me/2644849180" class="button contact__card-button" target="_blank">
+                                    Escríbanos
+                                </a>
+                                
+                            </div>
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-envelope' ></i>
+
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Mail
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            Escribanos
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=doscumbrespropiedades@gmail.com" 
+                                    target="_blank" 
+                                    class="button contact__card-button">
+                                    Escríbanos
+                                </a>
+                            </div>
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxl-instagram'></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Instagram
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            Echa un vistazo
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=doscumbrespropiedades@gmail.com" 
+                                    target="_blank" 
+                                    class="button contact__card-button">
+                                    Visítanos
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== SUSCRIPCIÓN ====================-->
+            <section class="subscribe section">
+                <div class="subscribe__container container">
+                    <h1 class="subscribe__title">
+                        Comienza tu futuro con <br>
+                        Dos Cumbres
+                    </h1>
+                    <p class="subscribe__description">
+                        Encuentra tu residencia ideal ahora, <br>
+                        consulta lo que sea, <br>
+                        estamos a disposición.
+                    </p>
+                    <a href="https://wa.me/2644849180" class="button subscribe__button">
+                        Contáctenos
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div>
+                    <a href="" class="footer__logo">
+                        Dos Cumbres <i class='bx bx-chevrons-up' ></i>
+                    </a>
+                    <p class="footer__description">
+                        "Nuestra misión es ayudarte a <br>
+                        encontrar la vivienda de tus sueños, <br>
+                        un hogar donde puedas construir <br>
+                        tu futuro con tranquilidad y confianza." <br>
+                    </p>
+                </div>
+
+                <div class="footer__content">
+                    <div>
+                        <h3 class="footer__title">
+                            Nosotros
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="index.html#value" class="footer__link">Acerca de Nosotros</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            Compañía
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="index.html#value" class="footer__link">Como trabajamos</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Seguridad</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            Soporte
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">FAQs</a>
+                            </li>
+                            <li>
+                                <a href="index.html#contact" class="footer__link">Contáctenos</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            Siganos
+                        </h3>
+
+                        <ul class="footer__social">
+                           <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                                <i class='bx bxl-facebook-circle' ></i>
+                           </a>
+                           <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                                <i class='bx bxl-instagram-alt' ></i>
+                           </a>
+                           <a href="https://www.pinterest.com/" target="_blank" class="footer__social-link">
+                                <i class='bx bxl-pinterest' ></i>
+                           </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__info container">
+                <span class="footer__copy">
+                    Miguel Jose Martin <i class='bx bx-copyright' ></i>
+                </span>
+
+                <div class="footer__privacy">
+                    <a href="#">Terminos y condiciones</a>
+                    <a href="#">Politicas de privacidad</a>
+                </div>
+            </div>
+
+        </footer>
+
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bxs-chevrons-up' ></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    </body>
+</html>
