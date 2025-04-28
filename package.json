@@ -1,0 +1,12 @@
+{
+    "name": "dos-cumbres-inmobiliaria",
+    "version": "1.0.0",
+    "description": "Sitio web para inmobiliaria Dos Cumbres",
+    "scripts": {
+      "generate": "node scripts/generate-properties.js"
+    },
+    "dependencies": {
+      "fs": "0.0.1-security",
+      "path": "^0.12.7"
+    }
+  }

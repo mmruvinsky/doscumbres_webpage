@@ -1,0 +1,328 @@
+{
+    "properties": [
+      {
+        "id": "property1",
+        "title": "Casa barrio El Ceibo",
+        "type": "Venta",
+        "price": 380000,
+        "currency": "USD",
+        "creditAvailable": true,
+        "location": {
+          "address": "Rastreador Calivar Nte. 817, J5400 Rivadavia, San Juan",
+          "coordinates": {"lat": -31.513760037539914, "lng": -68.61593358951305}
+        },
+        "features": {
+          "bathrooms": 2,
+          "totalArea": 150,
+          "coveredArea": 120,
+          "bedrooms": 3,
+          "pool": true,
+          "garage": true
+        },
+        "description": "Se vende casa en el barrio El Ceibo, ubicada frente a un espacio común con pileta y cerca de la garita de entrada. La propiedad cuenta con 750 m² totales, de los cuales 280 m² son cubiertos. Está construida con materiales de primera calidad, resistentes y duraderos: ventanas de aluminio con doble vidrio Blindex, instalación eléctrica trifásica en perfecto estado, cañerías impecables y un sistema de caldera con 14 radiadores distribuidos en todos los ambientes. La casa dispone de balcones en la planta alta (uno frontal y otro trasero), cochera techada con capacidad para dos vehículos y una entrada lateral directa hacia el patio trasero.",
+        "additionalInfo": "Precio Expensas: 250.000$ | Moneda: ARS",
+        "mainImage": "assets/img/elceibo1.jpeg",
+        "images": [
+          {"src": "assets/img/elceibo1.jpeg", "title": "Exterior"},
+          {"src": "assets/img/elceibo2.jpg", "title": "Exterior"},
+          {"src": "assets/img/elceibo3.jpg", "title": "Exterior"},
+          {"src": "assets/img/elceibo4.jpg", "title": "Plano"},
+          {"src": "assets/img/elceibo5.jpg", "title": "Exterior"},
+          {"src": "assets/img/elceibo6.jpg", "title": "Living"},
+          {"src": "assets/img/elceibo7.jpg", "title": "Exterior"},
+          {"src": "assets/img/elceibo9.jpg", "title": "Baño 1"},
+          {"src": "assets/img/elceibo10.jpg", "title": "Cocina"},
+          {"src": "assets/img/elceibo12.jpg", "title": "Comedor"},
+          {"src": "assets/img/elceibo13.jpg", "title": "Estudio"},
+          {"src": "assets/img/elceibo14.jpg", "title": "Baño 2"},
+          {"src": "assets/img/elceibo15.jpg", "title": "Estufa living"}
+        ],
+        "order": 1
+      },
+      {
+        "id": "property2",
+        "title": "Complejo de departamentos",
+        "type": "Venta",
+        "price": 500000,
+        "currency": "USD",
+        "creditAvailable": true,
+        "location": {
+          "address": "Pedro de Valdivia 1453 oeste entre urquiza y conector sur, J5400, San Juan",
+          "coordinates": {"lat": -31.549492259258514, "lng": -68.5409454894604}
+        },
+        "features": {
+          "totalArea": 550,
+          "departmentA": "4 unidades, 2 habitaciones c/u, 55m²",
+          "departmentB": "1 unidad, 1 habitaciones c/u, 70m²",
+          "departmentC": "1 unidad, 2 habitaciones c/u, 85m²",
+          "commonSpace": true,
+          "garage": "6 plazas"
+        },
+        "description": "Se vende propiedad de construcción tradicional en excelente estado, con un total de 550 m² construidos (incluyendo cocheras). El inmueble está compuesto por: cuatro departamentos de 2 habitaciones de 55 m² cada uno, un departamento de 1 habitación de 70 m², y un departamento de 2 habitaciones de 85 m². Además, cuenta con 6 cocheras y un espacio común. La propiedad está equipada con energía trifásica y gas natural, y ofrece amoblamientos completos en todos los departamentos, incluyendo horno, cocina y calefón. Los acabados son de primera calidad: porcelanato, sanitarios de primera línea y carpintería de aluminio anodizado. Está lista para habitar y para escriturar. Se vende completa.",
+        "additionalInfo": "Se vende completo",
+        "mainImage": "assets/img/complejo1.jpg",
+        "images": [
+          {"src": "assets/img/complejo11.jpeg", "title": "Exterior"},
+          {"src": "assets/img/complejo2.jpg", "title": "Exterior"},
+          {"src": "assets/img/complejo3.jpg", "title": "Exterior"},
+          {"src": "assets/img/complejo4.jpg", "title": "Exterior"},
+          {"src": "assets/img/complejo5.jpg", "title": "Cocina"},
+          {"src": "assets/img/complejo6.jpg", "title": "Cocina"},
+          {"src": "assets/img/complejo7.jpg", "title": "Dormitorio"},
+          {"src": "assets/img/complejo8.jpg", "title": "Dormitorio"},
+          {"src": "assets/img/complejo9.jpg", "title": "Entrada"},
+          {"src": "assets/img/complejo10.jpg", "title": "Comedor"}
+        ],
+        "order": 2
+      },
+      {
+        "id": "property3",
+        "title": "Departamento moderno capital",
+        "type": "Venta",
+        "price": 100000,
+        "currency": "USD",
+        "creditAvailable": true,
+        "location": {
+          "address": "9 de julio y Caseros, J5400, San Juan",
+          "coordinates": {"lat": -31.541913087152356, "lng": -68.51719373178867}
+        },
+        "features": {
+          "bathrooms": 2,
+          "bedrooms": 3,
+          "balcony": true
+        },
+        "description": "Ubicado por 9 de julio y caseros, está remodelado entero como nuevo, cuenta con 3 habitaciones, 1 baño principal, cocina con desayunador, living comedor y balcón.",
+        "additionalInfo": "Precio Expensas: - | Moneda: ARS",
+        "mainImage": "assets/img/depto_capital7.jpeg",
+        "images": [
+          {"src": "assets/img/depto_capital1.jpeg", "title": "Baño"},
+          {"src": "assets/img/depto_capital2.jpeg", "title": "Living"},
+          {"src": "assets/img/depto_capital3.jpeg", "title": "Living-Comedor"},
+          {"src": "assets/img/depto_capital4.jpeg", "title": "Living-Comedor"},
+          {"src": "assets/img/depto_capital5.jpeg", "title": "Comedor"},
+          {"src": "assets/img/depto_capital6.jpeg", "title": "Living"},
+          {"src": "assets/img/depto_capital7.jpeg", "title": "Living-Comedor"},
+          {"src": "assets/img/depto_capital8.jpeg", "title": "Habitación 1"},
+          {"src": "assets/img/depto_capital9.jpeg", "title": "Habitación 2"},
+          {"src": "assets/img/depto_capital10.jpeg", "title": "Cocina"},
+          {"src": "assets/img/depto_capital11.jpeg", "title": "Cocina"},
+          {"src": "assets/img/depto_capital12.jpeg", "title": "Balcon"}
+        ],
+        "order": 5
+      },
+      {
+        "id": "property4",
+        "title": "Casa zona centro",
+        "type": "Venta",
+        "price": 180000,
+        "currency": "USD",
+        "creditAvailable": true,
+        "location": {
+          "address": "Zona centro, J5400, San Juan",
+          "coordinates": {"lat": -31.535871631002603, "lng": -68.5179613741167}
+        },
+        "features": {
+          "bathrooms": 2,
+          "totalArea": 300,
+          "coveredArea": 178,
+          "bedrooms": 3,
+          "pool": false,
+          "garage": true
+        },
+        "description": "La propiedad tiene 300 m2 de terreno, 178 m2 cubiertos, ubicada a pocas cuadras de cimac, cuenta con 3 dormitorios con Placard, un baño principal y uno en suite, living comedor, cocina amplia, cochera con portón automático patio de luz, patio en T con parrillero y quincho con baulera, amplia terraza con habitación y baño de servicio en excelentes condiciones, instalación de agua y electricidad nuevas.",
+        "additionalInfo": "-",
+        "mainImage": "assets/img/casacentro22.jpeg",
+        "images": [
+          {"src": "assets/img/casacentro22.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro2.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro3.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro4.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro5.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro6.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro7.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro8.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro9.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro10.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro11.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro12.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro13.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro14.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro15.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro16.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro17.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro18.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro19.jpeg", "title": ""},
+          {"src": "assets/img/Casa_centro20.jpeg", "title": ""}
+        ],
+        "order": 4
+      },
+      {
+        "id": "property5",
+        "title": "Monoambiente capital",
+        "type": "Venta",
+        "price": 50000,
+        "currency": "USD",
+        "creditAvailable": true,
+        "location": {
+          "address": "San Isidro y Matías Zavalla, J5400, San Juan",
+          "coordinates": {"lat": -31.529128094820564, "lng": -68.54909060110116}
+        },
+        "features": {
+          "bathrooms": 1,
+          "balcony": 1,
+          "pool": false,
+          "garage": false
+        },
+        "description": "Monoambiente en excelente estado de uso y conservación ubicado en planta alta, sobre muy buena pasada (corazón de capital) a tres cuadras de shopping patio Alvear, cuenta con balcón, un baño, living comedor separado de cocina por pasillo y una habitación.",
+        "additionalInfo": "Se escuchan ofertas, apto para crédito hipotecario.",
+        "mainImage": "assets/img/monoambiente13.jpeg",
+        "images": [
+          {"src": "assets/img/monoambiente2.jpeg", "title": "Living"},
+          {"src": "assets/img/monoambiente3.jpeg", "title": "Balcón"},
+          {"src": "assets/img/monoambiente4.jpeg", "title": "Baño"},
+          {"src": "assets/img/monoambiente5.jpeg", "title": "Habitación"},
+          {"src": "assets/img/monoambiente6.jpeg", "title": "Living"},
+          {"src": "assets/img/monoambiente7.jpeg", "title": "Balcon"},
+          {"src": "assets/img/monoambiente8.jpeg", "title": "Living"},
+          {"src": "assets/img/monoambiente9.jpeg", "title": "Exterior"},
+          {"src": "assets/img/monoambiente10.jpeg", "title": "Entrada"},
+          {"src": "assets/img/monoambiente11.jpeg", "title": "Cocina"},
+          {"src": "assets/img/monoambiente12.jpeg", "title": "Exterior"}
+        ],
+        "order": 3
+      },
+      {
+        "id": "property6",
+        "title": "Casa reciclable",
+        "type": "Venta",
+        "price": 90000,
+        "currency": "USD",
+        "creditAvailable": true,
+        "location": {
+          "address": "A cuadras de Matias Zavalla y Av. Libertador, J5400, San Juan",
+          "coordinates": {"lat": -31.532193172078497, "lng": -68.54993911829683}
+        },
+        "features": {
+          "bathrooms": 1,
+          "totalArea": 289,
+          "coveredArea": 79,
+          "bedrooms": 3,
+          "pool": false,
+          "garage": true
+        },
+        "description": "Se vende casa en excelente ubicación en la capital, a pocas cuadras de la prestigiosa Avenida Libertador. Con una superficie total de 289 m² y 79 m² cubiertos, esta propiedad ofrece un espacio bien distribuido y funcional para toda la familia. El living amplio es perfecto para recibir visitas o disfrutar de momentos en familia. La cocina, acompañada de un práctico lavadero, facilita las tareas diarias. Los patios delantero y trasero brindan áreas al aire libre para el esparcimiento, destacando el patio trasero con su pileta, parrillero y pérgola, ideal para reuniones y entretenimiento. La casa cuenta con tres dormitorios acogedores, un baño completo y una habitación de servicio que puede adaptarse a diversas necesidades, como cuarto de huéspedes u oficina. Además, la entrada directa para vehículos con cochera es una comodidad invaluable en esta zona céntrica. Una oportunidad única para quienes buscan un hogar con potencial y en una ubicación inmejorable.",
+        "additionalInfo": "Se escuchan ofertas, apto para crédito hipotecario.",
+        "mainImage": "assets/img/reciclableppal.jpeg",
+        "images": [
+          {"src": "assets/img/Reciclable1.jpeg", "title": "Exterior"},
+          {"src": "assets/img/Reciclable2.jpeg", "title": "Living"},
+          {"src": "assets/img/Reciclable3.jpeg", "title": "Habitación"},
+          {"src": "assets/img/Reciclable4.jpeg", "title": "Baño"},
+          {"src": "assets/img/Reciclable5.jpeg", "title": "Habitación"},
+          {"src": "assets/img/Reciclable6.jpeg", "title": "Exterior"},
+          {"src": "assets/img/Reciclable7.jpeg", "title": "Cocina"},
+          {"src": "assets/img/Reciclable8.jpeg", "title": "Living"},
+          {"src": "assets/img/reciclable10.jpeg", "title": "Exterior"}
+        ],
+        "order": 6
+      },
+      {
+        "id": "property7",
+        "title": "Casa Barrio Residencial",
+        "type": "Venta",
+        "price": 430000,
+        "currency": "USD",
+        "creditAvailable": true,
+        "location": {
+          "address": "Barrio Residencial, a cuadras de plaza Italia, J5400, San Juan",
+          "coordinates": {"lat": -31.534473840707076, "lng": -68.55078358760885}
+        },
+        "features": {
+          "bathrooms": 4,
+          "semicoveredArea": 80,
+          "coveredArea": 260,
+          "bedrooms": 4,
+          "offices": 2,
+          "pool": true,
+          "garage": "3 vehículos"
+        },
+        "description": "Casa en excelente ubicación (capital) en barrio recidencial muy seguro y tranquilo a una cuadra de plaza Italia, refaccionada con los mejores materiales de construcción (ventanas de aluminio, blindex, parquet, etc), 260 m2 cubiertos en forma cuadrada, 80 m2 semicubierta; Esta propiedad combina lo moderno con lo vintage conservando muebles empotrados, repintados. En la parte exterior cuenta con un portón metálico eléctrico, una puerta metálica con portero y sistema de cámara; Patio en C separado con tranquera metálica, contando con un jardín frontal con cochera semicubierta para 3 vehículos aprox y un jardín trasero con parrillero, pileta, jacuzzi con galería semicubierta y pieza de servicios con baño. La planta baja de la propiedad cuenta con muchas entradas de luz gracias a diversas ventanas, un living amplio con estufa a gas estilo caldera, dos oficinas una de ellas con salida al patio trasero, pasillo repartidor y escaleras amplias, cocina con isla central amoblada y salida al patio trasero, lavadero, y comedor grande con baño, ventanal de blindex con salida a la galería, en la planta superior cuenta con un baño principal, 4 habitaciones 3 de ellas en suite, una cuenta con vestidor grande y baño, una habitación con vestidor chico y baño en suite, una habitación amplia con baño en suite y una habitación amplia con ventanal que no cuenta con baño en suite.",
+        "additionalInfo": "Se escuchan ofertas, apto para crédito hipotecario.",
+        "mainImage": "assets/img/residencialppal.jpeg",
+        "images": [
+          {"src": "assets/img/residencial1.jpeg", "title": "Cocina"},
+          {"src": "assets/img/residencial2.jpeg", "title": "Habitación"},
+          {"src": "assets/img/residencial3.jpeg", "title": "Habitación"},
+          {"src": "assets/img/residencial4.jpeg", "title": "Habitación"},
+          {"src": "assets/img/residencial5.jpeg", "title": "Exterior"},
+          {"src": "assets/img/residencial6.jpeg", "title": "Living-Comedor"},
+          {"src": "assets/img/residencial7.jpeg", "title": "Escritorio"},
+          {"src": "assets/img/residencial9.jpeg", "title": "Living-Comedor"},
+          {"src": "assets/img/residencial10.jpeg", "title": "Exterior"},
+          {"src": "assets/img/residencial11.jpeg", "title": "Exterior"},
+          {"src": "assets/img/residencial12.jpeg", "title": "Cochera"},
+          {"src": "assets/img/residencial13.jpeg", "title": "Pileta"},
+          {"src": "assets/img/residencial14.jpeg", "title": "Exterior"},
+          {"src": "assets/img/residencialppal.jpeg", "title": "Exterior"}
+        ],
+        "order": 7
+      },
+      {
+        "id": "property8",
+        "title": "Terreno",
+        "type": "Venta",
+        "price": 30000,
+        "currency": "USD",
+        "creditAvailable": false,
+        "location": {
+          "address": "A cuadras de Matias Zavalla y Av. Libertador, J5400, San Juan",
+          "coordinates": {"lat": -31.55227797623945, "lng": -68.51064947411633}
+        },
+        "description": "Se vende ideal terreno en zona muy tranquila y buena ubicación (cerca de Toyota) a dos cuadras de el lateral de circunvalación. LOTE 03 de la MANZANA \"E\", describiéndolo con los siguientes límites, medidas y superficies: NORTE: Con parcela N.C.N° 01-63-600200, mide 8,90metros; SUR: Con calle Proyectada N°3, mide 8,89 metros: ESTE: Con lote N° 4 del mismo plano, mide 27.92 metros; OESTE: Con Lote N° 2 del mismo plano, mide 27,46.",
+        "additionalInfo": "Se escuchan ofertas.",
+        "mainImage": "assets/img/terrenoppal.jpeg",
+        "images": [
+          {"src": "assets/img/terreno1.jpeg", "title": ""},
+          {"src": "assets/img/terreno2.jpeg", "title": ""},
+          {"src": "assets/img/terreno3.jpeg", "title": ""},
+          {"src": "assets/img/terreno4.jpeg", "title": ""}
+        ],
+        "order": 8
+      },
+      {
+        "id": "property9",
+        "title": "Departamento Maria Auxiliadora",
+        "type": "Alquiler",
+        "price": 500000,
+        "currency": "ARS",
+        "creditAvailable": false,
+        "location": {
+          "address": "Complejo Maria Auxiliadora, J5400, San Juan",
+          "coordinates": {"lat": -31.54295400707388, "lng": -68.50935803178852}
+        },
+        "description": "Alquilo un departamento en complejo María auxiliadora de primer nivel a estrenar, tiene dos aires acondicionados, 1 baño, living, balcón, gimnasio, terraza con parrillero y hermosa vista. Primer piso.",
+        "additionalInfo": "Para ingresar se pide mes de alquiler, mes de garantía y mes de inmobiliaria.",
+        "mainImage": "assets/img/mauxppal.jpeg",
+        "images": [
+          {"src": "assets/img/maux1.jpeg", "title": "Complejo"},
+          {"src": "assets/img/maux2.jpeg", "title": "Complejo"},
+          {"src": "assets/img/maux3.jpeg", "title": "Complejo"},
+          {"src": "assets/img/maux4.jpeg", "title": "Complejo"},
+          {"src": "assets/img/maux5.jpeg", "title": "Terraza"},
+          {"src": "assets/img/maux6.jpeg", "title": "Gimnasio"},
+          {"src": "assets/img/maux7.jpeg", "title": "Cocina"},
+          {"src": "assets/img/maux8.jpeg", "title": "Cocina"},
+          {"src": "assets/img/maux9.jpeg", "title": "Entrada"},
+          {"src": "assets/img/maux10.jpeg", "title": "Entrada"},
+          {"src": "assets/img/maux12.jpeg", "title": "Habitación"},
+          {"src": "assets/img/maux13.jpeg", "title": "Habitación"},
+          {"src": "assets/img/maux14.jpeg", "title": "Baño"},
+          {"src": "assets/img/maux15.jpeg", "title": "Baño"},
+          {"src": "assets/img/maux16.jpeg", "title": "Comedor"},
+          {"src": "assets/img/maux17.jpeg", "title": "Balcón"},
+          {"src": "assets/img/maux18.jpeg", "title": "Balcón"}
+        ],
+        "order": 9
+      }
+    ]
+  }

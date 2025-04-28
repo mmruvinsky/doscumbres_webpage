@@ -19,7 +19,7 @@
         <!--=============== LIGHTBOX ===============-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
-    <title>Complejo de departamentos - Dos Cumbres</title>
+    <title>{{PROPERTY_TITLE}} - Dos Cumbres</title>
 </head>
 
 <body class="dark-theme">
@@ -44,109 +44,19 @@
     <!-- Galería de imagenes -->
     <section class="popular section" id="popular">
         <div class="container">
-            <span class="section__subtitle">Venta</span>
+            <span class="section__subtitle">{{PROPERTY_TYPE}}</span>
             <h2 class="section__title">
-                Complejo de departamentos<span>.</span>
+                {{PROPERTY_TITLE}}<span>.</span>
             </h2>
 
             <!-- Nueva imagen principal -->
             <div class="main-property-image">
-                <img src="assets/img/complejo1.jpg" alt="Imagen principal de la propiedad" class="main-property-img">
+                <img src="{{PROPERTY_MAIN_IMAGE}}" alt="Imagen principal de la propiedad" class="main-property-img">
             </div>
 
             <div class="popular__container swiper">
                 <div class="swiper-wrapper">
-                    
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo11.jpeg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Exterior
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo2.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Exterior
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo3.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Exterior
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo4.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Exterior
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo5.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Cocina
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo6.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Cocina
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo7.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Dormitorio
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo8.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Dormitorio
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo9.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Entrada
-            </h3>
-          </div>
-        </article>
-      
-        <article class="popular__card swiper-slide">
-          <img src="assets/img/complejo10.jpg" alt="" class="popular__img">
-          <div class="popular__data">
-            <h3 class="popular__title">
-              Comedor
-            </h3>
-          </div>
-        </article>
-      
+                    {{PROPERTY_IMAGES}}
                 </div>
 
                 <div class="swiper-button-next">
@@ -161,21 +71,13 @@
 
     <!-- Contenido de la Propiedad -->
     <section class="property__content">
-        <div class="property__price"><span>$</span>500,000 | Moneda: USD</div>
-        <p class="property__status">Venta - Apta para Crédito Hipotecario</p>
+        <div class="property__price"><span>$</span>{{PROPERTY_PRICE}} | Moneda: {{PROPERTY_CURRENCY}}</div>
+        <p class="property__status">{{PROPERTY_STATUS}}</p>
     </section>
 
     <!-- Características -->
     <div class="property__features">
-        <div class="property__feature"><i class='bx bx-ruler'></i><span>550 m² (total)</span></div>
-<div class="property__feature"><i class='bx bx-car'></i><span>Cochera: 6 plazas</span></div>
-<div class="property__feature-group">
-<div class="property__feature"><i class='bx bx-home'></i><span>Departamento A: 4 unidades, 2 habitaciones c/u, 55m²</span></div>
-<div class="property__feature"><i class='bx bx-home'></i><span>Departamento B: 1 unidad, 1 habitaciones c/u, 70m²</span></div>
-<div class="property__feature"><i class='bx bx-home'></i><span>Departamento C: 1 unidad, 2 habitaciones c/u, 85m²</span></div>
-</div>
-<div class="property__feature"><i class='bx bxs-group'></i><span>Espacio común</span></div>
-
+        {{PROPERTY_FEATURES}}
     </div>
 
     <!-- Mapa -->
@@ -189,10 +91,10 @@
     <!-- Descripción -->
     <div class="property-info">
         <h3>Descripción</h3>
-        <p>Se vende propiedad de construcción tradicional en excelente estado, con un total de 550 m² construidos (incluyendo cocheras). El inmueble está compuesto por: cuatro departamentos de 2 habitaciones de 55 m² cada uno, un departamento de 1 habitación de 70 m², y un departamento de 2 habitaciones de 85 m². Además, cuenta con 6 cocheras y un espacio común. La propiedad está equipada con energía trifásica y gas natural, y ofrece amoblamientos completos en todos los departamentos, incluyendo horno, cocina y calefón. Los acabados son de primera calidad: porcelanato, sanitarios de primera línea y carpintería de aluminio anodizado. Está lista para habitar y para escriturar. Se vende completa.</p>
+        <p>{{PROPERTY_DESCRIPTION}}</p>
     
         <h3>Detalles Adicionales</h3>
-        <p>Se vende completo</p>
+        <p>{{PROPERTY_ADDITIONAL_INFO}}</p>
         
         <a href="https://wa.me/2644849180" class="button">Contactar Ahora</a>
     </div>
@@ -314,7 +216,7 @@
     <script>
     function initMap() {
         // Coordenadas de la propiedad
-        const propertyLocation = { lat: -31.549492259258514, lng: -68.5409454894604 };
+        const propertyLocation = { lat: {{PROPERTY_LAT}}, lng: {{PROPERTY_LNG}} };
 
         // Crear el mapa
         const map = new google.maps.Map(document.getElementById('property-map'), {
@@ -347,7 +249,7 @@
         new google.maps.Marker({
         position: propertyLocation,
         map: map,
-        title: "Complejo de departamentos"
+        title: "{{PROPERTY_TITLE}}"
         });
     }
     </script>
