@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador - Dos Cumbres</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --first-color: #0E8388;
+            --first-color-alt: #0A6971;
+            --title-color: #CBE4DE;
+            --text-color: #858585;
+            --text-color-light: #AAAAAA;
+            --body-color: #2C3333;
+            --container-color: #252B2B;
+            --border-color: #3E4646;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --error-color: #F44336;
+            
+            --body-font: 'Poppins', sans-serif;
+            --biggest-font-size: 2.25rem;
+            --h1-font-size: 1.5rem;
+            --h2-font-size: 1.25rem;
+            --h3-font-size: 1rem;
+            --normal-font-size: .938rem;
+            --small-font-size: .813rem;
+            --smaller-font-size: .75rem;
+        }
+        
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            color: var(--title-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--first-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        
+        .header {
+            background-color: var(--container-color);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header__logo {
+            display: flex;
+            align-items: center;
+            column-gap: .5rem;
+            font-weight: 700;
+            color: var(--title-color);
+        }
+        
+        .header__logo i {
+            font-size: 1.25rem;
+            color: var(--first-color);
+        }
+        
+        .main {
+            margin-top: 5rem;
+        }
+        
+        .admin-panel {
+            background-color: var(--container-color);
+            border-radius: .5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .admin-panel__title {
+            font-size: var(--h2-font-size);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            column-gap: .5rem;
+        }
+        
+        .admin-panel__title i {
+            color: var(--first-color);
+        }
+        
+        .admin-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        
+        .tab-btn {
+            background-color: transparent;
+            color: var(--text-color);
+            border: none;
+            padding: .75rem 1.5rem;
+            cursor: pointer;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            border-radius: .25rem;
+            transition: .3s;
+        }
+        
+        .tab-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .tab-btn.active {
+            background-color: var(--first-color);
+            color: #fff;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .property-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .property-card {
+            background-color: var(--body-color);
+            border-radius: .5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform .3s;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .property-card__img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .property-card__content {
+            padding: 1rem;
+        }
+        
+        .property-card__title {
+            font-size: var(--h3-font-size);
+            margin-bottom: .5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .property-card__price {
+            font-weight: 600;
+            color: var(--first-color);
+            margin-bottom: .5rem;
+        }
+        
+        .property-card__address {
+            font-size: var(--small-font-size);
+            color: var(--text-color-light);
+            margin-bottom: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .property-card__actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--first-color);
+            color: #fff;
+            border: none;
+            padding: .75rem 1.5rem;
+            border-radius: .25rem;
+            font-family: var(--body-font);
+            font-size: var(--small-font-size);
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--first-color-alt);
+        }
+        
+        .btn-small {
+            padding: .5rem 1rem;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--first-color);
+            color: var(--first-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--first-color);
+            color: #fff;
+        }
+        
+        .btn-danger {
+            background-color: var(--error-color);
+        }
+        
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: .5rem;
+            color: var(--title-color);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: .75rem;
+            border-radius: .25rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--first-color);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: .75rem;
+            border-radius: .25rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-col {
+            flex: 1;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .features-container {
+            background-color: var(--body-color);
+            border-radius: .5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .features-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-item {
+            margin-bottom: 1rem;
+        }
+        
+        .image-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .image-item {
+            background-color: var(--body-color);
+            border-radius: .5rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+        
+        .image-item-actions {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: .25rem;
+            border-bottom-left-radius: .5rem;
+        }
+        
+        .image-item-actions button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .add-image-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            border: 2px dashed var(--border-color);
+            border-radius: .5rem;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .add-image-btn:hover {
+            border-color: var(--first-color);
+        }
+        
+        .add-image-btn i {
+            font-size: 2rem;
+            color: var(--text-color-light);
+            margin-bottom: .5rem;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: .5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background-color: rgba(76, 175, 80, 0.1);
+            border: 1px solid var(--success-color);
+            color: var(--success-color);
+        }
+        
+        .alert-error {
+            background-color: rgba(244, 67, 54, 0.1);
+            border: 1px solid var(--error-color);
+            color: var(--error-color);
+        }
+        
+        .export-section {
+            margin-top: 2rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+ <!-- Header -->
+<header class="header">
+    <div class="header__container container">
+        <a href="index.html" class="header__logo">
+            Dos Cumbres <i class='bx bx-chevrons-up'></i>
+        </a>
+        <div>
+            <button id="logout-btn" class="btn btn-small btn-outline">Cerrar sesión</button>
+            <a href="index.html" class="btn btn-small">Volver al sitio</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="main container">
+        <div class="admin-panel">
+            <h2 class="admin-panel__title">
+                <i class='bx bxs-dashboard'></i> Panel de Administración
+            </h2>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="properties">Propiedades</button>
+                <button class="tab-btn" data-tab="add-property">Agregar Propiedad</button>
+                <button class="tab-btn" data-tab="export">Exportar/Importar</button>
+            </div>
+            
+            <!-- Properties Tab -->
+            <div id="properties" class="tab-content active">
+                <h3>Listado de Propiedades</h3>
+                <div id="property-list" class="property-list">
+                    <!-- Las propiedades se cargarán dinámicamente aquí -->
+                </div>
+            </div>
+            
+            <!-- Add Property Tab -->
+            <div id="add-property" class="tab-content">
+                <h3 id="form-title">Agregar Nueva Propiedad</h3>
+                <form id="property-form">
+                    <input type="hidden" id="property-id" value="">
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="title" class="form-label">Título</label>
+                                <input type="text" id="title" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="type" class="form-label">Tipo</label>
+                                <select id="type" class="form-select" required>
+                                    <option value="Venta">Venta</option>
+                                    <option value="Alquiler">Alquiler</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="price" class="form-label">Precio</label>
+                                <input type="number" id="price" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="currency" class="form-label">Moneda</label>
+                                <select id="currency" class="form-select" required>
+                                    <option value="USD">Dólares (USD)</option>
+                                    <option value="ARS">Pesos (ARS)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="credit-available" class="form-label">Apta para Crédito</label>
+                                <select id="credit-available" class="form-select">
+                                    <option value="true">Sí</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address" class="form-label">Dirección</label>
+                        <input type="text" id="address" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="lat" class="form-label">Latitud</label>
+                                <input type="text" id="lat" class="form-input" placeholder="-31.5423">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="lng" class="form-label">Longitud</label>
+                                <input type="text" id="lng" class="form-input" placeholder="-68.5234">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Características</label>
+                        <div class="features-container">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="feature-item">
+                                        <label for="bathrooms" class="form-label">Baños</label>
+                                        <input type="number" id="bathrooms" class="form-input" min="0">
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="feature-item">
+                                        <label for="bedrooms" class="form-label">Habitaciones</label>
+                                        <input type="number" id="bedrooms" class="form-input" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="feature-item">
+                                        <label for="total-area" class="form-label">Área Total (m²)</label>
+                                        <input type="number" id="total-area" class="form-input" min="0">
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="feature-item">
+                                        <label for="covered-area" class="form-label">Área Cubierta (m²)</label>
+                                        <input type="number" id="covered-area" class="form-input" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="feature-item">
+                                        <label for="pool" class="form-label">Pileta</label>
+                                        <select id="pool" class="form-select">
+                                            <option value="true">Sí</option>
+                                            <option value="false" selected>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="feature-item">
+                                        <label for="garage" class="form-label">Cochera</label>
+                                        <select id="garage" class="form-select">
+                                            <option value="true">Sí</option>
+                                            <option value="false" selected>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea id="description" class="form-input form-textarea" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional-info" class="form-label">Información Adicional</label>
+                        <textarea id="additional-info" class="form-input form-textarea"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="main-image" class="form-label">Imagen Principal</label>
+                        <input type="text" id="main-image" class="form-input" placeholder="assets/img/propiedad.jpg" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Imágenes de la Galería</label>
+                        <div id="images-container" class="image-list">
+                            <!-- Las imágenes se cargarán dinámicamente aquí -->
+                            <div class="add-image-btn" id="add-image-btn">
+                                <i class='bx bx-plus'></i>
+                                <span>Agregar</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="cancel-btn" class="btn btn-outline">Cancelar</button>
+                        <button type="submit" id="save-btn" class="btn">Guardar</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Export Tab -->
+            <div id="export" class="tab-content">
+                <h3>Exportar e Importar Datos</h3>
+                <p>Aquí puedes exportar todos los datos de propiedades o importar desde un archivo JSON.</p>
+                
+                <div class="export-section">
+                    <h4>Exportar datos</h4>
+                    <p>Descarga un archivo JSON con todas las propiedades. Puedes guardarlo como respaldo.</p>
+                    <button id="export-btn" class="btn">Exportar JSON</button>
+                </div>
+                
+                <div class="export-section">
+                    <h4>Importar datos</h4>
+                    <p>Carga un archivo JSON con propiedades. <strong>Nota:</strong> Esto reemplazará todas las propiedades actuales.</p>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                    <button id="import-btn" class="btn btn-outline">Importar JSON</button>
+                </div>
+                
+                <div class="export-section">
+                    <h4>Generar HTML</h4>
+                    <p>Una vez que hayas finalizado con los cambios, debes ejecutar el script de generación:</p>
+                    <pre style="background: #1E2222; padding: 1rem; border-radius: .5rem; overflow-x: auto;">npm run generate</pre>
+                    <p>Esto creará los archivos HTML basados en las propiedades actuales.</p>
+                    <div class="alert alert-success" id="generation-message" style="display: none;">
+                        JSON exportado correctamente. Ejecuta el script de generación en tu entorno local.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+// Verificar autenticación
+(function checkAuth() {
+    if (!localStorage.getItem('admin_authenticated')) {
+        window.location.href = 'admin-login.html';
+        return;
+    }
+})();
+        // Estado global
+        let properties = [];
+        let currentImages = [];
+        let editingPropertyId = null;
+
+        // Elementos DOM
+        const propertyListEl = document.getElementById('property-list');
+        const propertyFormEl = document.getElementById('property-form');
+        const formTitleEl = document.getElementById('form-title');
+        const propertyIdEl = document.getElementById('property-id');
+        const imagesContainerEl = document.getElementById('images-container');
+        const addImageBtnEl = document.getElementById('add-image-btn');
+        const cancelBtnEl = document.getElementById('cancel-btn');
+        const exportBtnEl = document.getElementById('export-btn');
+        const importBtnEl = document.getElementById('import-btn');
+        const importFileEl = document.getElementById('import-file');
+        const generationMessageEl = document.getElementById('generation-message');
+        // Configurar evento de cierre de sesión
+    document.getElementById('logout-btn').addEventListener('click', function() {
+        localStorage.removeItem('admin_authenticated');
+        window.location.href = 'index.html';
+    });
+
+        // Cargar propiedades
+        async function loadProperties() {
+            try {
+                const response = await fetch('properties.json');
+                const data = await response.json();
+                properties = data.properties || [];
+                renderPropertyList();
+            } catch (error) {
+                console.error('Error al cargar las propiedades:', error);
+                properties = [];
+            }
+        }
+
+        // Renderizar lista de propiedades
+        function renderPropertyList() {
+            propertyListEl.innerHTML = '';
+            
+            properties.forEach(property => {
+                const propertyEl = document.createElement('div');
+                propertyEl.className = 'property-card';
+                
+                const isRent = property.type && property.type.toLowerCase() === 'alquiler';
+                const priceDisplay = isRent 
+                    ? `<span>•</span> Alquiler` 
+                    : `$${property.price ? property.price.toLocaleString() : '0'} ${property.currency || 'USD'}`;
+                
+                propertyEl.innerHTML = `
+                    <img src="${property.mainImage || ''}" alt="${property.title || ''}" class="property-card__img">
+                    <div class="property-card__content">
+                        <h3 class="property-card__title">${property.title || ''}</h3>
+                        <div class="property-card__price">${priceDisplay}</div>
+                        <div class="property-card__address">${property.location ? property.location.address : ''}</div>
+                        <div class="property-card__actions">
+                            <button class="btn btn-small btn-outline edit-property-btn" data-id="${property.id}">Editar</button>
+                            <button class="btn btn-small btn-danger delete-property-btn" data-id="${property.id}">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+                
+                propertyListEl.appendChild(propertyEl);
+            });
+            
+            // Agregar eventos a los botones
+            document.querySelectorAll('.edit-property-btn').forEach(btn => {
+                btn.addEventListener('click', () => editProperty(btn.dataset.id));
+            });
+            
+            document.querySelectorAll('.delete-property-btn').forEach(btn => {
+                btn.addEventListener('click', () => deleteProperty(btn.dataset.id));
+            });
+        }
+
+        // Editar propiedad
+        function editProperty(propertyId) {
+            const property = properties.find(p => p.id === propertyId);
+            if (!property) return;
+            
+            editingPropertyId = propertyId;
+            propertyIdEl.value = propertyId;
+            formTitleEl.textContent = `Editar Propiedad: ${property.title}`;
+            
+            // Llenar el formulario con los datos de la propiedad
+            document.getElementById('title').value = property.title || '';
+            document.getElementById('type').value = property.type || 'Venta';
+            document.getElementById('price').value = property.price || '';
+            document.getElementById('currency').value = property.currency || 'USD';
+            document.getElementById('credit-available').value = property.creditAvailable ? 'true' : 'false';
+            
+            if (property.location) {
+                document.getElementById('address').value = property.location.address || '';
+                document.getElementById('lat').value = property.location.coordinates ? property.location.coordinates.lat : '';
+                document.getElementById('lng').value = property.location.coordinates ? property.location.coordinates.lng : '';
+            }
+            
+            if (property.features) {
+                document.getElementById('bathrooms').value = property.features.bathrooms || '';
+                document.getElementById('bedrooms').value = property.features.bedrooms || '';
+                document.getElementById('total-area').value = property.features.totalArea || '';
+                document.getElementById('covered-area').value = property.features.coveredArea || '';
+                document.getElementById('pool').value = property.features.pool ? 'true' : 'false';
+                document.getElementById('garage').value = 
+                    typeof property.features.garage === 'boolean'
+                        ? (property.features.garage ? 'true' : 'false')
+                        : 'true';
+            } else {
+                document.getElementById('bathrooms').value = '';
+                document.getElementById('bedrooms').value = '';
+                document.getElementById('total-area').value = '';
+                document.getElementById('covered-area').value = '';
+                document.getElementById('pool').value = 'false';
+                document.getElementById('garage').value = 'false';
+            }
+            
+            document.getElementById('description').value = property.description || '';
+            document.getElementById('additional-info').value = property.additionalInfo || '';
+            document.getElementById('main-image').value = property.mainImage || '';
+            
+            // Cargar imágenes
+            currentImages = property.images ? [...property.images] : [];
+            renderImageList();
+            
+            // Cambiar a la pestaña de edición
+            showTab('add-property');
+        }
+
+        // Eliminar propiedad
+        function deleteProperty(propertyId) {
+            if (!confirm('¿Estás seguro de eliminar esta propiedad? Esta acción no se puede deshacer.')) return;
+            
+            properties = properties.filter(p => p.id !== propertyId);
+            saveProperties();
+            renderPropertyList();
+        }
+
+        // Guardar propiedades
+        function saveProperties() {
+            const data = { properties };
+            localStorage.setItem('properties_json', JSON.stringify(data));
+        }
+
+        // Renderizar lista de imágenes
+        function renderImageList() {
+            // Limpiar el contenedor excepto el botón de agregar
+            const children = Array.from(imagesContainerEl.children);
+            children.forEach(child => {
+                if (child !== addImageBtnEl) {
+                    imagesContainerEl.removeChild(child);
+                }
+            });
+            
+            // Agregar las imágenes
+            currentImages.forEach((image, index) => {
+                const imageEl = document.createElement('div');
+                imageEl.className = 'image-item';
+                imageEl.innerHTML = `
+                    <img src="${image.src}" alt="${image.title || ''}">
+                    <div class="image-item-actions">
+                        <button type="button" class="delete-image-btn" data-index="${index}">
+                            <i class='bx bx-trash'></i>
+                        </button>
+                    </div>
+                    <input type="hidden" class="image-src" value="${image.src}">
+                    <input type="hidden" class="image-title" value="${image.title || ''}">
+                `;
+                
+                imagesContainerEl.insertBefore(imageEl, addImageBtnEl);
+            });
+            
+            // Agregar eventos a los botones de eliminar
+            document.querySelectorAll('.delete-image-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const index = parseInt(btn.dataset.index);
+                    currentImages.splice(index, 1);
+                    renderImageList();
+                });
+            });
+        }
+
+        // Agregar una nueva imagen
+        function addNewImage() {
+            const src = prompt('Ingresa la ruta de la imagen (ej: assets/img/nueva-imagen.jpg):');
+            if (!src) return; // Si el usuario cancela o no ingresa nada
+            
+            const title = prompt('Ingresa el título de la imagen (opcional):');
+            
+            currentImages.push({ src, title });
+            renderImageList();
+        }
+
+        // Guardar formulario
+        function savePropertyForm(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const title = document.getElementById('title').value;
+            const type = document.getElementById('type').value;
+            const price = parseFloat(document.getElementById('price').value);
+            const currency = document.getElementById('currency').value;
+            const creditAvailable = document.getElementById('credit-available').value === 'true';
+            
+            const address = document.getElementById('address').value;
+            const lat = parseFloat(document.getElementById('lat').value) || 0;
+            const lng = parseFloat(document.getElementById('lng').value) || 0;
+            
+            const description = document.getElementById('description').value;
+            const additionalInfo = document.getElementById('additional-info').value;
+            const mainImage = document.getElementById('main-image').value;
+            
+            // Características
+            const features = {
+                bathrooms: parseInt(document.getElementById('bathrooms').value) || 0,
+                bedrooms: parseInt(document.getElementById('bedrooms').value) || 0,
+                totalArea: parseInt(document.getElementById('total-area').value) || 0,
+                coveredArea: parseInt(document.getElementById('covered-area').value) || 0,
+                pool: document.getElementById('pool').value === 'true',
+                garage: document.getElementById('garage').value === 'true'
+            };
+            
+            // Crear objeto de propiedad
+            const property = {
+                id: editingPropertyId || `property${properties.length + 1}`,
+                title,
+                type,
+                price,
+                currency,
+                creditAvailable,
+                location: {
+                    address,
+                    coordinates: { lat, lng }
+                },
+                features,
+                description,
+                additionalInfo,
+                mainImage,
+                images: [...currentImages],
+                order: editingPropertyId ? properties.find(p => p.id === editingPropertyId)?.order || properties.length + 1 : properties.length + 1
+            };
+            
+            // Actualizar o agregar la propiedad
+            if (editingPropertyId) {
+                const index = properties.findIndex(p => p.id === editingPropertyId);
+                if (index !== -1) {
+                    properties[index] = property;
+                }
+            } else {
+                properties.push(property);
+            }
+            
+            // Guardar y actualizar la UI
+            saveProperties();
+            resetForm();
+            renderPropertyList();
+            showTab('properties');
+            
+            alert(`Propiedad ${editingPropertyId ? 'actualizada' : 'agregada'} correctamente.`);
+        }
+
+        // Resetear formulario
+        function resetForm() {
+            propertyFormEl.reset();
+            editingPropertyId = null;
+            propertyIdEl.value = '';
+            currentImages = [];
+            formTitleEl.textContent = 'Agregar Nueva Propiedad';
+            renderImageList();
+        }
+
+        // Exportar JSON
+        function exportJSON() {
+            const data = { properties };
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'properties.json';
+            a.click();
+            
+            URL.revokeObjectURL(url);
+            
+            generationMessageEl.style.display = 'block';
+            setTimeout(() => {
+                generationMessageEl.style.display = 'none';
+            }, 5000);
+        }
+
+        // Importar JSON
+        function importJSON(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (data.properties && Array.isArray(data.properties)) {
+                        if (confirm('¿Estás seguro de reemplazar todas las propiedades actuales? Esta acción no se puede deshacer.')) {
+                            properties = data.properties;
+                            saveProperties();
+                            renderPropertyList();
+                            alert('Propiedades importadas correctamente.');
+                        }
+                    } else {
+                        alert('El archivo JSON no tiene el formato correcto.');
+                    }
+                } catch (error) {
+                    console.error('Error al parsear el JSON:', error);
+                    alert('Error al leer el archivo JSON.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Cambiar entre pestañas
+        function showTab(tabId) {
+            // Ocultar todas las pestañas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Desactivar todos los botones
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Mostrar la pestaña seleccionada
+            document.getElementById(tabId).classList.add('active');
+            
+            // Activar el botón correspondiente
+            document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cargar propiedades desde localStorage o archivo
+            const savedProperties = localStorage.getItem('properties_json');
+            if (savedProperties) {
+                try {
+                    const data = JSON.parse(savedProperties);
+                    properties = data.properties || [];
+                    renderPropertyList();
+                } catch (error) {
+                    console.error('Error al cargar propiedades desde localStorage:', error);
+                    loadProperties(); // Cargar desde el archivo si hay error
+                }
+            } else {
+                loadProperties();
+            }
+            
+            // Configurar eventos de pestañas
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => showTab(btn.dataset.tab));
+            });
+            
+            // Configurar eventos del formulario
+            propertyFormEl.addEventListener('submit', savePropertyForm);
+            cancelBtnEl.addEventListener('click', () => {
+                resetForm();
+                showTab('properties');
+            });
+            
+            // Configurar evento de agregar imagen
+            addImageBtnEl.addEventListener('click', addNewImage);
+            
+            // Configurar eventos de exportar/importar
+            exportBtnEl.addEventListener('click', exportJSON);
+            importBtnEl.addEventListener('click', () => importFileEl.click());
+            importFileEl.addEventListener('change', importJSON);
+        });
+    </script>
+</body>
+</html>

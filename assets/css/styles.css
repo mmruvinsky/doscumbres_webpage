@@ -1586,3 +1586,12 @@ body.dark-theme{
 .property__status {
   font-size: 6rem; /* Aumenta la especificidad */
 }
+
+.admin-link {
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.admin-link:hover {
+  opacity: 1;
+}
