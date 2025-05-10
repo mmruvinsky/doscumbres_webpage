@@ -222,7 +222,8 @@ body.dark-theme{
 }
 
 .nav__logo i{
-  font-size: 2.5rem;
+  font-weight: var(--font-semi-bold);
+  font-size: 3rem;
 }
 
 .nav__logo:hover{
@@ -263,6 +264,20 @@ body.dark-theme{
 
   .nav__link span{
     display: none;
+  }
+}
+
+/* Versión móvil - hacer aún más grande */
+@media screen and (max-width: 768px) {
+  .nav__logo {
+      font-size: 1.25rem; /* Un poco más pequeño en móvil pero aún más grande que el original */
+  }
+}
+
+/* En pantallas grandes hacerlo aún más visible */
+@media screen and (min-width: 1024px) {
+  .nav__logo {
+      font-size: 1.75rem; /* Más grande en pantallas grandes */
   }
 }
 
@@ -1594,4 +1609,69 @@ body.dark-theme{
 
 .admin-link:hover {
   opacity: 1;
+}
+
+/* Aumentar el tamaño del logo */
+.nav__logo {
+  font-size: 1.75rem !important;
+  font-weight: var(--font-semi-bold) !important;
+}
+
+/* Ocultar el botón "Llámanos" */
+.nav__button {
+  display: none !important;
+}
+
+/* Aumentar el tamaño de la barra de navegación */
+.header {
+  height: auto !important;
+  padding: 1rem 0 !important;
+}
+
+.nav {
+  height: auto !important;
+  min-height: calc(var(--header-height) + 1rem) !important;
+}
+
+/* Aumentar el tamaño de los enlaces de navegación */
+.nav__link {
+  font-size: 1.2rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+/* Cuando está en modo escritorio, asegurar que los enlaces sean visibles y grandes */
+@media screen and (min-width: 1023px) {
+  .nav__list {
+      column-gap: 3.5rem !important;
+  }
+  
+  .nav__link {
+      font-size: 1.25rem !important;
+      font-weight: var(--font-medium) !important;
+  }
+  
+  .nav__menu {
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+  }
+  
+  .active-link {
+      font-weight: var(--font-semi-bold) !important;
+  }
+}
+
+/* En dispositivos móviles, aumentar el tamaño de los iconos y el menú inferior */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+      padding: 1.5rem 3rem !important;
+      bottom: 2.5rem !important;
+  }
+  
+  .nav__link i {
+      font-size: 1.5rem !important;
+  }
+  
+  .nav__link {
+      padding: 0.75rem !important;
+  }
 }
